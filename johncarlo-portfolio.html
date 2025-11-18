@@ -5,13 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>John Carlo Obana - Portfolio</title>
   <style>
+    /* ------------------------------------------- */
+    /* NEW CSS FOR VIDEO BACKGROUND */
+    /* ------------------------------------------- */
+
+    /* The video element itself */
+    #video-background {
+      position: fixed; /* Fixes the video to the viewport */
+      right: 0;
+      bottom: 0;
+      min-width: 100%; /* Ensures it covers the full width */
+      min-height: 100%; /* Ensures it covers the full height */
+      width: auto;
+      height: auto;
+      z-index: -100; /* Puts the video behind all other content */
+      background-size: cover;
+      /* Optional: Use background image as fallback for browsers that don't support video */
+      background-color: #0f172a; 
+    }
+
+    /* An overlay to make the text readable over the video */
+    .content-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.7); /* Dark semi-transparent color */
+      z-index: -99; /* Below the content, above the video */
+    }
+
+    /* The main content container to ensure all text and images are on top */
+    .main-content {
+      position: relative; /* Needed to be above the video and overlay */
+      z-index: 1; 
+      /* Optional: Add a subtle background to the content area itself for better readability */
+      /* background-color: rgba(15, 23, 42, 0.5); */
+      padding: 30px;
+      /* Remove body padding, we'll put it on the main-content div */
+    }
+
+
+    /* ------------------------------------------- */
+    /* ORIGINAL CSS MODIFICATIONS */
+    /* ------------------------------------------- */
     
     body {
-      background: #0f172a;
+      /* Removed background color and padding from body */
+      background: transparent; /* Changed to transparent to see video */
       color: #f8fafc;
       font-family: Arial, sans-serif;
       text-align: center;
-      padding: 30px;
+      margin: 0; /* Important: Remove default body margin */
+      overflow-x: hidden; /* Prevent horizontal scrollbar from fixed elements */
     }
 
     h1 {
@@ -109,52 +155,61 @@
 </head>
 <body>
 
-  <h1>Welcome to My Portfolio</h1>
+  <video autoplay muted loop id="video-background">
+    <source src="your-background-video.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
 
-  <p>Hi! I'm <strong>John Carlo Obana</strong>, the Leader of our group. I am passionate about guiding teams to achieve goals efficiently while fostering creativity and innovation. I enjoy learning new technologies, planning projects, and helping my team grow through collaboration and effective communication.</p>
+  <div class="content-overlay"></div>
 
-  <img src="johncarlo.jpg" alt="John Carlo Picture" />
+  <div class="main-content">
+    
+    <h1>Welcome to My Portfolio</h1>
 
-  <h2>About Me</h2>
-  <p>I am a dedicated and proactive individual with strong leadership qualities. My interests include technology, problem-solving, creative planning, and developing innovative solutions. I believe in teamwork, personal growth, and turning challenges into opportunities for learning and success.</p>
+    <p>Hi! I'm <strong>John Carlo Obana</strong>, the Leader of our group. I am passionate about guiding teams to achieve goals efficiently while fostering creativity and innovation. I enjoy learning new technologies, planning projects, and helping my team grow through collaboration and effective communication.</p>
 
-  <h2>My Skills & Interests</h2>
-  <ul>
-    <li>Leadership & Team Management</li>
-    <li>Problem Solving</li>
-    <li>Communication & Coordination</li>
-    <li>Technology Enthusiast</li>
-    <li>Creative Planning</li>
-  </ul>
- 
-  <h2>-- CONTACT SECTION --</h2>
-  <div class="contact-info">
+    <img src="johncarlo.jpg" alt="John Carlo Picture" />
 
-    <a href="https://www.facebook.com/carlrey.5766/" target="_blank" class="contact-item">
-      <img src="facebook-logo.png" alt="Facebook" />
-      <span>John Carlo Obana</span>
-    </a>
+    <h2>About Me</h2>
+    <p>I am a dedicated and proactive individual with strong leadership qualities. My interests include technology, problem-solving, creative planning, and developing innovative solutions. I believe in teamwork, personal growth, and turning challenges into opportunities for learning and success.</p>
 
-    <a href="mailto:johncarlo@gmail.com" class="contact-item">
-      <img src="gmail-logo.png" alt="Email" />
-      <span>johncarlo@gmail.com</span>
-    </a>
+    <h2>My Skills & Interests</h2>
+    <ul>
+      <li>Leadership & Team Management</li>
+      <li>Problem Solving</li>
+      <li>Communication & Coordination</li>
+      <li>Technology Enthusiast</li>
+      <li>Creative Planning</li>
+    </ul>
+    
+    <h2>-- CONTACT SECTION --</h2>
+    <div class="contact-info">
 
-    <a href="tel:+639123456789" class="contact-item">
-      <img src="phone-logo.png" alt="Phone" />
-      <span>+63 912 345 6789</span>
-    </a>
+      <a href="https://www.facebook.com/carlrey.5766/" target="_blank" class="contact-item">
+        <img src="facebook-logo.png" alt="Facebook" />
+        <span>John Carlo Obana</span>
+      </a>
 
-    <a href="https://maps.google.com/?q=San+Quintin+Pangasinan"
-       target="_blank" class="contact-item">
-      <img src="location-logo.png" alt="Location" />
-      <span>San Quintin, Pangasinan</span>
-    </a>
+      <a href="mailto:johncarlo@gmail.com" class="contact-item">
+        <img src="gmail-logo.png" alt="Email" />
+        <span>johncarlo@gmail.com</span>
+      </a>
 
-  </div>
+      <a href="tel:+639123456789" class="contact-item">
+        <img src="phone-logo.png" alt="Phone" />
+        <span>+63 912 345 6789</span>
+      </a>
 
-  <a href="index.html" class="back-button">Back to Main Page</a>
-  <a href="https://www.matchboxstats.com/" target="_blank" class="back-button">Visit My Favorite Website</a>
+      <a href="https://maps.google.com/?q=San+Quintin+Pangasinan"
+        target="_blank" class="contact-item">
+        <img src="location-logo.png" alt="Location" />
+        <span>San Quintin, Pangasinan</span>
+      </a>
 
-</body>
+    </div>
+
+    <a href="index.html" class="back-button">Back to Main Page</a>
+    <a href="https://www.matchboxstats.com/" target="_blank" class="back-button">Visit My Favorite Website</a>
+
+  </div> </body>
 </html>
