@@ -4,19 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>John Carlo Obana - Portfolio</title>
+
   <style>
-    
-    body {
+    /* LIVE BACKGROUND AREA */
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
       background: #0f172a;
+    }
+
+    body {
+      margin: 0;
+      padding: 30px;
+      text-align: center;
       color: #f8fafc;
       font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 30px;
+      position: relative;
     }
 
     h1 {
       font-size: 40px;
       color: #38bdf8;
+      text-shadow: 0 0 10px #38bdf8;
     }
 
     h2 {
@@ -24,6 +37,7 @@
       color: #60a5fa;
       margin-top: 30px;
       margin-bottom: 10px;
+      text-shadow: 0 0 10px #60a5fa;
     }
 
     p {
@@ -39,6 +53,7 @@
       border-radius: 15px;
       margin: 20px 0;
       border: 3px solid #38bdf8;
+      box-shadow: 0 0 15px #38bdf8;
     }
 
     ul {
@@ -59,6 +74,7 @@
       opacity: 0.8;
     }
 
+    /* CONTACT SECTION */
     .contact-info {
       margin-top: 40px;
       display: flex;
@@ -72,16 +88,18 @@
       align-items: center;
       gap: 6px;
       font-size: 14px;
-      background: #1e293b;
+      background: rgba(30, 41, 59, 0.7);
       padding: 8px 12px;
       border-radius: 10px;
       border: 1px solid #38bdf8;
       transition: 0.3s;
+      backdrop-filter: blur(3px);
     }
 
     .contact-item:hover {
       background: #38bdf8;
       color: #0f172a;
+      box-shadow: 0 0 10px #38bdf8;
     }
 
     .contact-item img {
@@ -104,10 +122,14 @@
     .back-button:hover {
       background: #38bdf8;
       color: #0f172a;
+      box-shadow: 0 0 10px #38bdf8;
     }
   </style>
 </head>
 <body>
+
+  <!-- LIVE BACKGROUND -->
+  <div id="particles-js"></div>
 
   <h1>Welcome to My Portfolio</h1>
 
@@ -126,8 +148,8 @@
     <li>Technology Enthusiast</li>
     <li>Creative Planning</li>
   </ul>
- 
-  <h2>-- CONTACT SECTION --</h2>
+
+  <h2>Contact Information</h2>
   <div class="contact-info">
 
     <a href="https://www.facebook.com/carlrey.5766/" target="_blank" class="contact-item">
@@ -155,6 +177,21 @@
 
   <a href="index.html" class="back-button">Back to Main Page</a>
   <a href="https://www.matchboxstats.com/" target="_blank" class="back-button">Visit My Favorite Website</a>
+
+  <!-- PARTICLES.JS SCRIPT -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <script>
+  particlesJS("particles-js", {
+    "particles": {
+      "number": { "value": 100 },
+      "size": { "value": 3 },
+      "move": { "speed": 2 },
+      "line_linked": { "enable": true, "color": "#38bdf8" },
+      "color": { "value": "#38bdf8" }
+    }
+  });
+  </script>
 
 </body>
 </html>
