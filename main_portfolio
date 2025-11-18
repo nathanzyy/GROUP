@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to Our Group Portfolio</title>
+  <title>Our Team Portfolio</title>
 
   <style>
     * {
@@ -13,85 +13,177 @@
       font-family: Arial, sans-serif;
     }
 
-    /* VIDEO BACKGROUND */
-    .video-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -2;
-    }
-
-    /* DARK OVERLAY */
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: -1;
-    }
-
-    /* MAIN CONTENT */
-    .content {
+    body {
+      background: linear-gradient(270deg, #0f172a, #1e293b, #334155, #0f172a);
+      background-size: 800% 800%;
+      animation: bgAnimate 18s ease infinite;
+      color: #f8fafc;
       text-align: center;
-      color: white;
-      margin-top: 15%;
-      padding: 20px;
+      padding: 30px;
+    }
+
+    @keyframes bgAnimate {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     h1 {
-      font-size: 3rem;
-      color: #4cc9f0;
-      text-shadow: 0 0 15px #4cc9f0;
+      font-size: 48px;
+      margin-bottom: 15px;
+      font-weight: bold;
+      background: linear-gradient(90deg, #38bdf8, #60a5fa, #0ea5e9, #38bdf8);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textAnimate 5s linear infinite;
+    }
+
+    @keyframes textAnimate {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 20px auto;
-      text-shadow: 0 0 10px black;
+      margin-bottom: 20px;
+      font-size: 18px;
     }
 
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 25px;
-      background: #f72585;
-      color: white;
-      font-size: 1.1rem;
-      border-radius: 10px;
-      text-decoration: none;
+    h2 {
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: #a5f3fc;
+      font-size: 30px;
+    }
+
+    .members {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .member-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      width: 180px;
+      text-align: center;
       transition: 0.3s;
-      box-shadow: 0px 0px 10px #f72585;
     }
 
-    .btn:hover {
-      background: #ff4fa3;
-      transform: scale(1.08);
+    .member-card:hover {
+      transform: scale(1.05);
+      border-color: #38bdf8;
     }
 
+    .member-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #38bdf8;
+      margin-bottom: 10px;
+    }
+
+    .member-card h3 {
+      font-size: 18px;
+      margin-bottom: 6px;
+      color: #38bdf8;
+    }
+
+    .member-card p {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .member-card a {
+      display: inline-block;
+      color: #0f172a;
+      background: #38bdf8;
+      text-decoration: none;
+      font-size: 14px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .member-card a:hover {
+      background: #60a5fa;
+    }
+
+    .group-description {
+      max-width: 750px;
+      margin: 20px auto 40px auto;
+      font-size: 18px;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    .group-picture {
+      margin-bottom: 50px;
+    }
+
+    .group-picture img {
+      width: 400px;
+      border-radius: 15px;
+      border: 3px solid #38bdf8;
+    }
   </style>
 </head>
 <body>
 
-  <!-- LIVE WALLPAPER VIDEO -->
-  <video class="video-bg" autoplay muted loop>
-    <source src="bg-video.mp4" type="video/mp4">
-  </video>
+  <h1>Welcome to Our Group Portfolio</h1>
+  <p>Hello! We are <strong>Group 1</strong>, a dynamic team of passionate individuals committed to collaboration, creativity, and excellence. Each member brings unique talents, from leadership and design to reporting and problem-solving, enabling us to tackle challenges with innovation and synergy. Our teamwork transforms ideas into tangible outcomes, and we constantly strive to learn, inspire, and grow together as a cohesive unit.</p>
 
-  <!-- DARK OVERLAY FOR READABILITY -->
-  <div class="overlay"></div>
+  <h2>Meet Our Members</h2>
+  <div class="members">
 
-  <!-- MAIN CONTENT -->
-  <div class="content">
-    <h1>Welcome to Our Group Portfolio</h1>
-    <p>We are Group 1. This website showcases our teamwork, creativity, and dedication in completing our project. Explore our members and see what makes us unique!</p>
+    <div class="member-card">
+      <img src="johncarlo.jpg" alt="John Carlo Obana">
+      <h3>John Carlo Obana</h3>
+      <p>Leader</p>
+      <a href="johncarlo-portfolio.html" target="_blank">View Portfolio</a>
+    </div>
 
-    <a href="members.html" class="btn">Visit Our Members</a>
+    <div class="member-card">
+      <img src="jonathan.jpg" alt="Jonathan Mabag">
+      <h3>Jonathan Mabag</h3>
+      <p>Portfolio Creator</p>
+      <a href="jonathan-portfolio.html" target="_blank">View Portfolio</a>
+    </div>
+
+    <div class="member-card">
+      <img src="daniel.jpg" alt="Daniel Lacanaria">
+      <h3>Daniel Lacanaria</h3>
+      <p>Reporter</p>
+      <a href="daniel-portfolio.html" target="_blank">View Portfolio</a>
+    </div>
+
+    <div class="member-card">
+      <img src="johnrouel.jpg" alt="John Rouel Gatchalian">
+      <h3>John Rouel Gatchalian</h3>
+      <p>Reporter</p>
+      <a href="johnrouel-portfolio.html" target="_blank">View Portfolio</a>
+    </div>
+
+    <div class="member-card">
+      <img src="steven.jpg" alt="Steven Manipon">
+      <h3>Steven Manipon</h3>
+      <p>Reporter</p>
+      <a href="steven-portfolio.html" target="_blank">View Portfolio</a>
+    </div>
+
+  </div>
+
+  <div class="group-description">
+    <p>As Group 1, we are more than just a team; we are a blend of creativity, innovation, and determination. Our combined skills enable us to approach challenges from multiple angles, turning obstacles into opportunities. From leading initiatives, designing and creating portfolios, to researching and reporting accurately, every member contributes uniquely. Together, we foster an environment where ideas flourish, collaboration thrives, and learning never stops—making our group a hub of talent and inspiration.</p>
+  </div>
+
+  <div class="group-picture">
+    <img src="group-picture.jpg" alt="Our Group Picture">
   </div>
 
 </body>
