@@ -5,60 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>John Carlo Obana - Portfolio</title>
   <style>
-    /* ------------------------------------------- */
-    /* NEW CSS FOR VIDEO BACKGROUND */
-    /* ------------------------------------------- */
-
-    /* The video element itself */
-    #video-background {
-      position: fixed; /* Fixes the video to the viewport */
-      right: 0;
-      bottom: 0;
-      min-width: 100%; /* Ensures it covers the full width */
-      min-height: 100%; /* Ensures it covers the full height */
-      width: auto;
-      height: auto;
-      z-index: -100; /* Puts the video behind all other content */
-      background-size: cover;
-      /* Optional: Use background image as fallback for browsers that don't support video */
-      background-color: #0f172a; 
-    }
-
-    /* An overlay to make the text readable over the video */
-    .content-overlay {
+   /* Live background video */
+    #bgVideo {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(15, 23, 42, 0.7); /* Dark semi-transparent color */
-      z-index: -99; /* Below the content, above the video */
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      filter: brightness(0.6);
     }
 
-    /* The main content container to ensure all text and images are on top */
-    .main-content {
-      position: relative; /* Needed to be above the video and overlay */
-      z-index: 1; 
-      /* Optional: Add a subtle background to the content area itself for better readability */
-      /* background-color: rgba(15, 23, 42, 0.5); */
-      padding: 30px;
-      /* Remove body padding, we'll put it on the main-content div */
-    }
-
-
-    /* ------------------------------------------- */
-    /* ORIGINAL CSS MODIFICATIONS */
-    /* ------------------------------------------- */
-    
     body {
-      /* Removed background color and padding from body */
-      background: transparent; /* Changed to transparent to see video */
       color: #f8fafc;
-      font-family: Arial, sans-serif;
       text-align: center;
-      margin: 0; /* Important: Remove default body margin */
-      overflow-x: hidden; /* Prevent horizontal scrollbar from fixed elements */
+      padding: 30px;
+      position: relative;
     }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+      font-weight: bold;
+      background: linear-gradient(90deg, #38bdf8, #60a5fa, #0ea5e9, #38bdf8);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textAnimate 5s linear infinite;
+    }
+
+    @keyframes textAnimate {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
 
     h1 {
       font-size: 40px;
