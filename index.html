@@ -49,18 +49,7 @@
       100% { background-position: 0% 50%; }
     }
 
-    p {
-      margin-bottom: 20px;
-      font-size: 18px;
-    }
-
-    h2 {
-      margin-top: 30px;
-      margin-bottom: 10px;
-      color: #a5f3fc;
-      font-size: 30px;
-    }
-
+    /* Cards layout */
     .members {
       display: flex;
       flex-wrap: wrap;
@@ -70,10 +59,10 @@
     }
 
     .member-card {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255,255,255,0.05);
       padding: 15px;
       border-radius: 15px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255,255,255,0.1);
       width: 180px;
       text-align: center;
       transition: 0.3s;
@@ -92,25 +81,13 @@
       margin-bottom: 10px;
     }
 
-    .member-card h3 {
-      font-size: 18px;
-      margin-bottom: 6px;
-      color: #38bdf8;
-    }
-
-    .member-card p {
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-
     .member-card a {
-      display: inline-block;
-      color: #0f172a;
       background: #38bdf8;
-      text-decoration: none;
-      font-size: 14px;
       padding: 6px 12px;
       border-radius: 8px;
+      display: inline-block;
+      color: #0f172a;
+      text-decoration: none;
       transition: 0.3s;
     }
 
@@ -118,76 +95,113 @@
       background: #60a5fa;
     }
 
-    .group-description {
-      max-width: 750px;
-      margin: 20px auto 40px auto;
+    /* Moving button */
+    #floatingBtn {
+      position: fixed;
+      bottom: 50px;
+      right: 50px;
+      width: 120px;
+      height: 50px;
+      background: #38bdf8;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #0f172a;
       font-size: 18px;
-      color: #cbd5e1;
-      line-height: 1.6;
-    }
-
-    .group-picture {
-      margin-bottom: 50px;
-    }
-
-    .group-picture img {
-      width: 400px;
-      border-radius: 15px;
-      border: 3px solid #38bdf8;
-    }
-
-    .group-photo-text {
       font-weight: bold;
-      font-size: 20px;
-      color: #38bdf8;
-      margin-bottom: 15px;
+      cursor: pointer;
+      animation: floatMove 8s infinite linear;
+      z-index: 9999;
+      box-shadow: 0 0 15px rgba(56,189,248,0.7);
+    }
+
+    @keyframes floatMove {
+      0% { transform: translate(0px, 0px); }
+      20% { transform: translate(-300px, -250px); }
+      40% { transform: translate(250px, -150px); }
+      60% { transform: translate(-200px, 180px); }
+      80% { transform: translate(150px, -300px); }
+      100% { transform: translate(0px, 0px); }
+    }
+
+    /* Fullscreen video popup */
+    #videoPopup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    }
+
+    #videoPopup video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Close button */
+    #closePopup {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      font-size: 50px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      z-index: 10001;
     }
   </style>
 </head>
 <body>
 
-  <!-- Live Background Video -->
+  <!-- Background video -->
   <video autoplay muted loop id="bgVideo">
     <source src="background.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
   </video>
 
   <h1>Welcome to Our Group Portfolio</h1>
-  <p>Hello! We are <strong>Group 1</strong>, a dynamic team of passionate individuals committed to collaboration, creativity, and excellence. Each member brings unique talents, from leadership and design to reporting and problem-solving, enabling us to tackle challenges with innovation and synergy. Our teamwork transforms ideas into tangible outcomes, and we constantly strive to learn, inspire, and grow together as a cohesive unit.</p>
+  <p>Hello! We are <strong>Group 1</strong>, a dynamic and creative team...</p>
 
   <h2>Meet Our Members</h2>
+
   <div class="members">
 
     <div class="member-card">
-      <img src="johncarlo.jpg" alt="John Carlo Obana">
+      <img src="johncarlo.jpg" alt="">
       <h3>John Carlo Obana</h3>
       <p>Leader</p>
       <a href="johncarlo-portfolio.html" target="_blank">View Portfolio</a>
     </div>
 
     <div class="member-card">
-      <img src="jonathan.jpg" alt="Jonathan Mabag">
+      <img src="jonathan.jpg" alt="">
       <h3>Jonathan Mabag</h3>
       <p>Portfolio Creator</p>
       <a href="jonathan-portfolio.html" target="_blank">View Portfolio</a>
     </div>
 
     <div class="member-card">
-      <img src="daniel.jpg" alt="Daniel Lacanaria">
+      <img src="daniel.jpg" alt="">
       <h3>Daniel Lacanaria</h3>
       <p>Reporter</p>
       <a href="daniel-portfolio.html" target="_blank">View Portfolio</a>
     </div>
 
     <div class="member-card">
-      <img src="johnrouel.jpg" alt="John Rouel Gatchalian">
+      <img src="johnrouel.jpg" alt="">
       <h3>John Rouel Gatchalian</h3>
       <p>Reporter</p>
       <a href="johnrouel-portfolio.html" target="_blank">View Portfolio</a>
     </div>
 
     <div class="member-card">
-      <img src="steven.jpg" alt="Steven Manipon">
+      <img src="steven.jpg" alt="">
       <h3>Steven Manipon</h3>
       <p>Reporter</p>
       <a href="steven-portfolio.html" target="_blank">View Portfolio</a>
@@ -195,14 +209,53 @@
 
   </div>
 
-  <div class="group-description">
-    <p>As Group 1, we are more than just a team; we are a blend of creativity, innovation, and determination. Our combined skills enable us to approach challenges from multiple angles, turning obstacles into opportunities. From leading initiatives, designing and creating portfolios, to researching and reporting accurately, every member contributes uniquely. Together, we foster an environment where ideas flourish, collaboration thrives, and learning never stops—making our group a hub of talent and inspiration.</p>
+  <!-- Moving button -->
+  <div id="floatingBtn">CLICK ME</div>
+
+  <!-- FULLSCREEN video popup -->
+  <div id="videoPopup">
+    <div id="closePopup">✖</div>
+    <video id="popupVideo">
+      <source src="sample.mp4" type="video/mp4">
+    </video>
   </div>
 
-  <div class="group-picture">
-    <div class="group-photo-text">GROUP PHOTO</div>
-    <img src="group-picture.jpg" alt="Our Group Picture">
-  </div>
+  <!-- Script -->
+  <script>
+    const btn = document.getElementById("floatingBtn");
+    const popup = document.getElementById("videoPopup");
+    const closeBtn = document.getElementById("closePopup");
+    const video = document.getElementById("popupVideo");
+
+    // Open fullscreen with max volume
+    btn.onclick = () => {
+      popup.style.display = "flex";
+
+      // Auto volume MAX
+      video.volume = 1.0;
+      video.muted = false;
+
+      video.play().catch(() => {
+        alert("Tap the screen to enable sound — your browser blocked autoplay sound.");
+      });
+    };
+
+    // Close video
+    closeBtn.onclick = () => {
+      popup.style.display = "none";
+      video.pause();
+      video.currentTime = 0;
+    };
+
+    // ESC key closes popup
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        popup.style.display = "none";
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+  </script>
 
 </body>
 </html>
