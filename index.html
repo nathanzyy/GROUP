@@ -49,7 +49,18 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Cards layout */
+    p {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    h2 {
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: #a5f3fc;
+      font-size: 30px;
+    }
+
     .members {
       display: flex;
       flex-wrap: wrap;
@@ -59,10 +70,10 @@
     }
 
     .member-card {
-      background: rgba(255,255,255,0.05);
+      background: rgba(255, 255, 255, 0.05);
       padding: 15px;
       border-radius: 15px;
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       width: 180px;
       text-align: center;
       transition: 0.3s;
@@ -81,13 +92,25 @@
       margin-bottom: 10px;
     }
 
+    .member-card h3 {
+      font-size: 18px;
+      margin-bottom: 6px;
+      color: #38bdf8;
+    }
+
+    .member-card p {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
     .member-card a {
-      background: #38bdf8;
-      padding: 6px 12px;
-      border-radius: 8px;
       display: inline-block;
       color: #0f172a;
+      background: #38bdf8;
       text-decoration: none;
+      font-size: 14px;
+      padding: 6px 12px;
+      border-radius: 8px;
       transition: 0.3s;
     }
 
@@ -95,113 +118,135 @@
       background: #60a5fa;
     }
 
-    /* Moving button */
+    .group-description {
+      max-width: 750px;
+      margin: 20px auto 40px auto;
+      font-size: 18px;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    .group-picture {
+      margin-bottom: 50px;
+    }
+
+    .group-picture img {
+      width: 400px;
+      border-radius: 15px;
+      border: 3px solid #38bdf8;
+    }
+
+    .group-photo-text {
+      font-weight: bold;
+      font-size: 20px;
+      color: #38bdf8;
+      margin-bottom: 15px;
+    }
+
+    /* Floating Moving Button */
     #floatingBtn {
       position: fixed;
       bottom: 50px;
       right: 50px;
-      width: 120px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       background: #38bdf8;
-      border-radius: 20px;
+      border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
       color: #0f172a;
-      font-size: 18px;
+      font-size: 30px;
       font-weight: bold;
       cursor: pointer;
-      animation: floatMove 8s infinite linear;
+      animation: floatMove 6s infinite linear;
       z-index: 9999;
       box-shadow: 0 0 15px rgba(56,189,248,0.7);
     }
 
     @keyframes floatMove {
-      0% { transform: translate(0px, 0px); }
-      20% { transform: translate(-300px, -250px); }
-      40% { transform: translate(250px, -150px); }
-      60% { transform: translate(-200px, 180px); }
-      80% { transform: translate(150px, -300px); }
-      100% { transform: translate(0px, 0px); }
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(-200px, -50px); }
+      50% { transform: translate(100px, -150px); }
+      75% { transform: translate(-150px, 80px); }
+      100% { transform: translate(0, 0); }
     }
 
-    /* Fullscreen video popup */
-    #videoPopup {
+    /* Video Modal */
+    #videoModal {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: black;
+      background: rgba(0,0,0,0.9);
       display: none;
       justify-content: center;
       align-items: center;
-      z-index: 10000;
+      z-index: 99999;
     }
 
-    #videoPopup video {
+    #videoModal video {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    /* Close button */
-    #closePopup {
+    #closeModal {
       position: absolute;
-      top: 20px;
-      right: 35px;
+      top: 40px;
+      right: 40px;
       font-size: 50px;
-      color: white;
+      color: #fff;
       cursor: pointer;
-      font-weight: bold;
       z-index: 10001;
     }
+
   </style>
 </head>
 <body>
 
-  <!-- Background video -->
+  <!-- Background Video -->
   <video autoplay muted loop id="bgVideo">
     <source src="background.mp4" type="video/mp4">
   </video>
 
   <h1>Welcome to Our Group Portfolio</h1>
-  <p>Hello! We are <strong>Group 1</strong>, a dynamic and creative team...</p>
+  <p>Hello! We are <strong>Group 1</strong>, a dynamic team of passionate individuals committed to collaboration, creativity, and excellence. Each member brings unique talents, from leadership and design to reporting and problem-solving, enabling us to tackle challenges with innovation and synergy. Our teamwork transforms ideas into tangible outcomes, and we constantly strive to learn, inspire, and grow together as a cohesive unit.</p>
 
   <h2>Meet Our Members</h2>
-
   <div class="members">
 
     <div class="member-card">
-      <img src="johncarlo.jpg" alt="">
+      <img src="johncarlo.jpg" alt="John Carlo Obana">
       <h3>John Carlo Obana</h3>
       <p>Leader</p>
       <a href="johncarlo-portfolio.html" target="_blank">View Portfolio</a>
     </div>
 
     <div class="member-card">
-      <img src="jonathan.jpg" alt="">
+      <img src="jonathan.jpg" alt="Jonathan Mabag">
       <h3>Jonathan Mabag</h3>
       <p>Portfolio Creator</p>
       <a href="jonathan-portfolio.html" target="_blank">View Portfolio</a>
     </div>
 
     <div class="member-card">
-      <img src="daniel.jpg" alt="">
+      <img src="daniel.jpg" alt="Daniel Lacanaria">
       <h3>Daniel Lacanaria</h3>
       <p>Reporter</p>
       <a href="daniel-portfolio.html" target="_blank">View Portfolio</a>
     </div>
 
     <div class="member-card">
-      <img src="johnrouel.jpg" alt="">
+      <img src="johnrouel.jpg" alt="John Rouel Gatchalian">
       <h3>John Rouel Gatchalian</h3>
       <p>Reporter</p>
       <a href="johnrouel-portfolio.html" target="_blank">View Portfolio</a>
     </div>
 
     <div class="member-card">
-      <img src="steven.jpg" alt="">
+      <img src="steven.jpg" alt="Steven Manipon">
       <h3>Steven Manipon</h3>
       <p>Reporter</p>
       <a href="steven-portfolio.html" target="_blank">View Portfolio</a>
@@ -209,50 +254,67 @@
 
   </div>
 
-  <!-- Moving button -->
-  <div id="floatingBtn">CLICK ME</div>
+  <div class="group-description">
+    <p>As Group 1, we are more than just a team; we are a blend of creativity, innovation, and determination. Our combined skills enable us to approach challenges from multiple angles, turning obstacles into opportunities. From leading initiatives, designing and creating portfolios, to researching and reporting accurately, every member contributes uniquely. Together, we foster an environment where ideas flourish, collaboration thrives, and learning never stops—making our group a hub of talent and inspiration.</p>
+  </div>
 
-  <!-- FULLSCREEN video popup -->
-  <div id="videoPopup">
-    <div id="closePopup">✖</div>
+  <div class="group-picture">
+    <div class="group-photo-text">GROUP PHOTO</div>
+    <img src="group-picture.jpg" alt="Our Group Picture">
+  </div>
+
+  <!-- Floating Moving Button -->
+  <div id="floatingBtn">Click Me</div>
+
+  <!-- Video Modal -->
+  <div id="videoModal">
+    <span id="closeModal">&times;</span>
     <video id="popupVideo">
       <source src="sample.mp4" type="video/mp4">
     </video>
   </div>
 
-  <!-- Script -->
   <script>
-    const btn = document.getElementById("floatingBtn");
-    const popup = document.getElementById("videoPopup");
-    const closeBtn = document.getElementById("closePopup");
-    const video = document.getElementById("popupVideo");
+    const floatingBtn = document.getElementById("floatingBtn");
+    const videoModal = document.getElementById("videoModal");
+    const popupVideo = document.getElementById("popupVideo");
+    const closeModal = document.getElementById("closeModal");
 
-    // Open fullscreen with max volume
-    btn.onclick = () => {
-      popup.style.display = "flex";
+    // Click button to open video modal
+    floatingBtn.onclick = () => {
+      videoModal.style.display = "flex";
 
-      // Auto volume MAX
-      video.volume = 1.0;
-      video.muted = false;
+      // Auto full volume
+      popupVideo.volume = 1.0;
+      popupVideo.muted = false;
 
-      video.play().catch(() => {
+      popupVideo.play().catch(() => {
         alert("Tap the screen to enable sound — your browser blocked autoplay sound.");
       });
     };
 
-    // Close video
-    closeBtn.onclick = () => {
-      popup.style.display = "none";
-      video.pause();
-      video.currentTime = 0;
+    // Close modal with ✖
+    closeModal.onclick = () => {
+      videoModal.style.display = "none";
+      popupVideo.pause();
+      popupVideo.currentTime = 0;
     };
 
-    // ESC key closes popup
+    // Close modal if clicking outside video
+    videoModal.onclick = (e) => {
+      if (e.target === videoModal) {
+        videoModal.style.display = "none";
+        popupVideo.pause();
+        popupVideo.currentTime = 0;
+      }
+    };
+
+    // Close modal with ESC key
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
-        popup.style.display = "none";
-        video.pause();
-        video.currentTime = 0;
+        videoModal.style.display = "none";
+        popupVideo.pause();
+        popupVideo.currentTime = 0;
       }
     });
   </script>
